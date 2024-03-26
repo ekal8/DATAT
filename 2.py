@@ -57,6 +57,14 @@ elif chart_view == "Data Frame":
     st.write("### Data for Selected Country:", selected_country)
     st.write(filtered_df)
 
+     # Convert numerical columns to integers
+    integer_columns = ['arrivals', 'arrivals_male', 'arrivals_female']
+    for col in integer_columns:
+        filtered_df[col] = filtered_df[col].astype(int)
+    
+    st.write(filtered_df)
+
+
     # Show the number of people entering the selected country
     total_arrivals = filtered_df['arrivals'].sum()
     st.write("### Total Arrivals:", total_arrivals)
