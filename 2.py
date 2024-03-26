@@ -80,5 +80,8 @@ st.plotly_chart(fig)
 
 # Statistical analysis
 st.header("Statistical Analysis")
-st.write("Here are some summary statistics of the arrivals data:")
-st.write(filtered_df.describe())
+# Round summary statistics to two decimal places
+summary_stats = filtered_df.describe().round(2)
+
+# Display summary statistics
+st.write(summary_stats)
