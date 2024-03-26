@@ -74,9 +74,9 @@ elif chart_view == "Data Frame":
 # Interactive map visualization
 st.header("Interactive Map Visualization")
 st.write("Here's an interactive map showing the geographical distribution of arrivals:")
-# Assuming 'latitude' and 'longitude' are the columns containing latitude and longitude coordinates
-st.map(filtered_df[['latitude', 'longitude']])
-
+fig = px.scatter_geo(filtered_df, locations="country", locationmode="country names", color="arrivals",
+                     hover_name="country", size="arrivals", projection="natural earth")
+st.plotly_chart(fig)
 
 # Statistical analysis
 st.header("Statistical Analysis")
