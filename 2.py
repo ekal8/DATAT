@@ -51,18 +51,17 @@ elif chart_view == "Bar Chart":
         st.plotly_chart(fig)
     except ImportError:
         st.error("This feature requires the Plotly library. Please install it by running `pip install plotly`.")
-        
+# Display data frame and summary statistics
 elif chart_view == "Data Frame":
-    try:
-        # Display the filtered dataframe
-        st.write("### Data for Selected Country:", selected_country)
-        st.write(filtered_df)
+    # Display the filtered dataframe
+    st.write("### Data for Selected Country:", selected_country)
+    st.write(filtered_df)
 
-        # Show the number of people entering the selected country
-        total_arrivals = filtered_df['arrivals'].sum()
-        st.write("### Total Arrivals:", total_arrivals)
-        
-        # Show arrivals by gender
-        st.write("### Arrivals by Gender:")
-        st.write("Male:", filtered_df['arrivals_male'].sum())
-        st.write("Female:", filtered_df['arrivals_female'].sum())
+    # Show the number of people entering the selected country
+    total_arrivals = filtered_df['arrivals'].sum()
+    st.write("### Total Arrivals:", total_arrivals)
+    
+    # Show arrivals by gender
+    st.write("### Arrivals by Gender:")
+    st.write("Male:", filtered_df['arrivals_male'].sum())
+    st.write("Female:", filtered_df['arrivals_female'].sum())
