@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 
 # Load your dataset
-df = pd.read_csv('data/arrivals.csv')  # Replace 'your_dataset.csv' with the path to your dataset
+df = pd.read_csv('arrivals.csv')  # Replace 'your_dataset.csv' with the path to your dataset
 
 # Sidebar with country selection
 selected_country = st.sidebar.selectbox('Select a Country', sorted(df['country'].unique()))
