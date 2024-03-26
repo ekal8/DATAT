@@ -51,6 +51,7 @@ elif chart_view == "Bar Chart":
         st.plotly_chart(fig)
     except ImportError:
         st.error("This feature requires the Plotly library. Please install it by running `pip install plotly`.")
+        
 elif chart_view == "Data Frame":
     try:
         # Display the filtered dataframe
