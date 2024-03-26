@@ -70,3 +70,13 @@ elif chart_view == "Data Frame":
     st.write("### Arrivals by Gender:")
     st.write("Male:", filtered_df['arrivals_male'].sum())
     st.write("Female:", filtered_df['arrivals_female'].sum())
+
+# Interactive map visualization
+st.header("Interactive Map Visualization")
+st.write("Here's an interactive map showing the geographical distribution of arrivals:")
+st.map(filtered_df)
+
+# Statistical analysis
+st.header("Statistical Analysis")
+st.write("Here are some summary statistics of the arrivals data:")
+st.write(filtered_df.describe())
