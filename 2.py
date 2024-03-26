@@ -19,6 +19,9 @@ df.rename(columns={'name': 'country'}, inplace=True)
 # Create a Streamlit app
 st.title('Arrivals Dashboard')
 
+total_all_arrivals = arrivals.sum()
+    st.write("### Total Arrivals:", total_all_arrivals)
+
 # Dropdown menu to select a country
 selected_country = st.selectbox('Select a Country', df['country'].unique())
 
