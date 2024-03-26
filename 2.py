@@ -19,12 +19,11 @@ df.rename(columns={'name': 'country'}, inplace=True)
 # Create a Streamlit app
 st.title('Arrivals Dashboard')
 
-# Calculate the sum of all arrivals in the DataFrame
-total_all_arrivals = df['arrivals'].sum()
+# Calculate the sum of all arrivals in the DataFrame and convert it to an integer
+total_all_arrivals = int(df['arrivals'].sum())
 
 # Display the total arrivals using Streamlit
-st.write("### Total Arrivals:", total_all_arrivals)
-
+st.write("### Total Arrivals:", total_all_arrivals,"Migrans from around the world")
 
 # Dropdown menu to select a country
 selected_country = st.selectbox('Select a Country', df['country'].unique())
