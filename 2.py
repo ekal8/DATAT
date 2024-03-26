@@ -12,7 +12,7 @@ df = load_data()
 # Convert country codes to full names (you may need to load a mapping)
 # Assuming you have a CSV file containing country codes and full names
 country_mapping = pd.read_csv('country_mapping.csv')  # Load your country mapping file
-df = df.merge(country_mapping, left_on='country', right_on='code', how='right')
+df = df.merge(country_mapping, left_on='country', right_on='code', how='left')
 df.drop(columns=['country'], inplace=True)
 df.rename(columns={'name': 'country'}, inplace=True)
 
