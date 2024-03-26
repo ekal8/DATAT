@@ -26,7 +26,7 @@ selected_country = st.selectbox('Select a Country', df['country'].unique())
 filtered_df = df[df['country'] == selected_country]
 
 # Add option to change view to graphical
-chart_view = st.radio("Select Chart View", ("Line Chart", "Bar Chart"))
+chart_view = st.radio("Select Chart View", ("Line Chart", "Bar Chart", "Data Frame"))
 
 # Line chart showing arrivals over time segmented by gender
 if chart_view == "Line Chart":
