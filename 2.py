@@ -53,9 +53,6 @@ elif chart_view == "Bar Chart":
         st.error("This feature requires the Plotly library. Please install it by running `pip install plotly`.")
 # Display data frame and summary statistics
 elif chart_view == "Data Frame":
-    # Display the filtered dataframe
-    st.write("### Data for Selected Country:", selected_country)
-    st.write(filtered_df)
 
      # Convert numerical columns to integers
     integer_columns = ['arrivals', 'arrivals_male', 'arrivals_female']
