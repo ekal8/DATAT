@@ -83,5 +83,9 @@ st.header("Statistical Analysis")
 # Round summary statistics to two decimal places
 summary_stats = filtered_df.describe().round(2)
 
+for col in summary_stats.columns:
+    if summary_stats[col].dtype == "float64":
+        summary_stats[col] = summary_stats[col].apply(lambda x: int(x) if x.is_integer() else x)
+
 # Display summary statistics
 st.write(summary_stats)
